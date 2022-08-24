@@ -1,0 +1,9 @@
+{% extends 'base.html' %}
+{% block content %}
+{% for todo in todos %}
+    <h2>{{todo.title }}</h2>
+    {{todo.description}}<br>
+    <a class="btn btn-primary" href="{%url 'todo_detail' todo.id %}">Learn More</a>
+    <hr>
+{% endfor %}
+{% endblock %}

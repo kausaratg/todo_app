@@ -1,0 +1,13 @@
+{% extends 'base.html' %}
+{% block content %}
+    <h1>Todo App</h1>
+    <form action="" method="POST">
+        {%csrf_token%}
+        {{form.as_p}}
+        {%if not form.instance.pk %}
+            <input type="submit" value="create">
+        {% else %}
+            <input type="submit" value="update">
+        {% endif %}
+    </form>
+{% endblock %}
